@@ -58,69 +58,7 @@
 
 	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min.js"></script>
 	<script>
-
-
-$.easing.self = function(x,t,b,c,d){
-	if ((t/=d) < (1/2.75)) {
-		return c*(7.5625*t*t) + b;
-	} else if (t < (2/2.75)) {
-		return c*(7.5625*(t-=(1.5/2.75))*t + .75) + b;
-	} else if (t < (2.5/2.75)) {
-		return c*(7.5625*(t-=(2.25/2.75))*t + .9375) + b;
-	} else {
-		return c*(7.5625*(t-=(2.625/2.75))*t + .984375) + b;
-	}
-}
-
-$(window).load(function(){
-
-
-	 $('.anim').on('anim',function(){
-
-	 	var anim = $(this).show();
-	 	// 阴影
-	 	var shadow_img = anim.find('.shadow').css({top:50,opacity:0}).animate({top:16},400).get(0);
-		// 元宝
-		var gold_img = anim.find('.gold').css('top', -300).animate({top:-18},{duration: 500,step:function(now, fx){
-			var x = (now+300)/(300-18);
-			if(x>0.5){
-				shadow_img.style.opacity = (x-0.5)*2;
-				shadow_img.style.width = (200*x-100)+'%';
-				shadow_img.style.marginLeft = (50-100*x)+'%';			
-			}
-			if(x>0.7){
-				gold_img.style.webkitTransform = 'rotate('+(x-0.7)*40+'deg)';
-			}
-		},complete:function(){
-			$('<div/>').css('opacity',0).animate({
-				opacity:1
-			},{
-				duration: 500,
-				easing:'self',
-				step:function(now, fx){
-					gold_img.style.webkitTransform = 'rotate('+(20-now*20)+'deg)';
-				}
-			});
-		}}).get(0);
-
-	 });
-
-
-
-	// 启动动画
-	$('.anim1').trigger('anim');
-	setTimeout(function(){$('.anim2').trigger('anim');},120);
-	setTimeout(function(){$('.anim3').trigger('anim');},40);
-	setTimeout(function(){$('.anim').hide()},8000);
-
-
-	// 播放mp3
-	var audio = document.getElementById('audio');
-	setTimeout(function(){audio.play();},80);
-
-});
-
-	
+eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('$.t.n=3(e,a,b,c,f){V(a/=f)<1/2.4?7.g*c*a*a+b:a<2/2.4?c*(7.g*(a-=1.5/2.4)*a+.4)+b:a<2.5/2.4?c*(7.g*(a-=2.F/2.4)*a+.H)+b:c*(7.g*(a-=2.J/2.4)*a+.M)+b};$(O).P(3(){$(".6").T("6",3(){k a=$(C).E(),b=a.A(".G").j({i:s,9:0}).l({i:16},17).o(0),c=a.A(".W").j("i",-p).l({i:-D},{q:r,B:3(a,e){k d=(a+p)/I;.5<d&&(b.8.9=2*(d-.5),b.8.K=L*d-u+"%",b.8.N=s-u*d+"%");.7<d&&(c.8.v="w("+x*(d-.7)+"y)")},R:3(){$("<S/>").j("9",0).l({9:1},{q:r,t:"n",B:3(a,b){c.8.v="w("+(z-z*a)+"y)"}})}}).o(0)});$(".U").m("6");h(3(){$(".X").m("6")},Y);h(3(){$(".Z").m("6")},x);k e=10.11("12");h(3(){e.13()},14);h(3(){$(".6").15()},Q)});',62,70,'|||function|75||anim||style|opacity|||||||5625|setTimeout|top|css|var|animate|trigger|self|get|300|duration|500|50|easing|100|webkitTransform|rotate|40|deg|20|find|step|this|18|show|25|shadow|9375|282|625|width|200|984375|marginLeft|window|load|8E3|complete|div|on|anim1|return|gold|anim2|120|anim3|document|getElementById|audio|play|80|fadeOut||400'.split('|'),0,{}))	
 
 
 
