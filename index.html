@@ -205,6 +205,7 @@ jQuery.extend( jQuery.easing,{
 
 $(window).load(function(){
 
+	var top = $(document.body).height()/2 + 60;
 
 	 $('.anim').on('anim',function(){
 
@@ -212,8 +213,8 @@ $(window).load(function(){
 	 	// 阴影
 	 	var shadow_img = anim.find('.shadow').css({top:50,opacity:0}).animate({top:16},400).get(0);
 		// 元宝
-		var gold_img = anim.find('.gold').css('top', -300).animate({top:-18},{duration: 1200,easing:'easeInQuad',step:function(now, fx){
-			var x = (now+300)/(300-18);
+		var gold_img = anim.find('.gold').css('top', -top).animate({top:-18},{duration: 1200,easing:'easeInQuad',step:function(now, fx){
+			var x = (now+top)/(top-18);
 			if(x>0.5){
 				shadow_img.style.opacity = (x-0.5)*2;
 				shadow_img.style.width = (200*x-100)+'%';
